@@ -1,0 +1,89 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+  background-color: #f987C5;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+#photo-gallery {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+#photo-gallery img {
+  width: 100px;
+  margin: 5px;
+  cursor: pointer;
+  position: relative; /* Untuk efek hati */
+}
+
+#photo-gallery img::before { /* Efek hati sederhana */
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  background-color: #FF69B4;
+  border-radius: 50%;
+  animation: heartBeat 1s infinite;
+}
+
+@keyframes heartBeat {
+  0% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-50%, -50%) scale(1.1); }
+  100% { transform: translate(-50%, -50%) scale(1); }
+}
+
+
+#main-content {
+  width: 80%;
+  max-width: 600px;
+  padding: 20px;
+  background-color: #F81894;
+  margin: 20px auto;
+}
+
+#message {
+  background-color: #FE5BAC;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#controls {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+#letter-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#letter-image {
+  max-width: 200px;
+  margin-bottom: 10px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 10px;
+}
